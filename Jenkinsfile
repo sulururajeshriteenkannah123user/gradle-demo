@@ -8,7 +8,6 @@ pipeline {
         }
         stage('Build & Test') {
             steps {
-                sh 'chmod +x gradlew' // If using wrapper, otherwise just 'gradle'
                 sh 'gradle clean test' 
             }
         }
