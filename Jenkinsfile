@@ -14,7 +14,7 @@ pipeline {
         }
        stage('SonarQube Analysis') {
             steps {
-                    sh '/home/cloud/gradle-8.5/bin/gradle sonarqube'
+                    sh '/home/cloud/gradle-8.5/bin/gradle sonar -Dsonar.token=squ_d6184eb31bcb718fba20d34554a5a70649c4f7af'
             }
         }
 
