@@ -14,9 +14,7 @@ pipeline {
         }
        stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
                     sh '/home/cloud/gradle-8.5/bin/gradle sonarqube'
-                }
             }
         }
 
