@@ -3,19 +3,19 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm [cite: 251]
+                checkout scm
             }
         }
         stage('Build & Test') {
             steps {
                 // Using your absolute path
-                sh '/home/cloud/gradle-8.5/bin/gradle clean test' [cite: 252]
+                sh '/home/cloud/gradle-8.5/bin/gradle clean test'
             }
         }
         stage('Archive Artifact') {
             steps {
-                sh '/home/cloud/gradle-8.5/bin/gradle jar' [cite: 254]
-                archiveArtifacts artifacts: 'build/libs/*.jar', allowEmptyArchive: false [cite: 255]
+                sh '/home/cloud/gradle-8.5/bin/gradle jar'
+                archiveArtifacts artifacts: 'build/libs/*.jar', allowEmptyArchive: false
             }
         }
     }
