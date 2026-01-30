@@ -12,6 +12,14 @@ pipeline {
                 sh '/home/cloud/gradle-8.5/bin/gradle clean test'
             }
         }
+       stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh '/home/cloud/gradle-8.5/bin/gradle sonarqube'
+                }
+            }
+        }
+
         stage('Archive Artifact') {
             steps {
                 sh '/home/cloud/gradle-8.5/bin/gradle jar'
